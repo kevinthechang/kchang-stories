@@ -7,9 +7,28 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
+<%# Menu %>
+	<div id="menu">
+	        <ul>
+	            <li><%= link_to "Home", '/' %></li>
+	            <li><%= link_to "About", 'about' %></li>
+	            <li><a href="#">Menu Item 3</a></li>
+	        </ul>
+	</div>
+	   
 <body>
 
 <%= yield %>
+
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+	
+
+	<%# Footer %>
+	<div class="footer">
+		<p>A KevintheChang Project</p>
+	</div>    
+	
 </body>
+
 </html>

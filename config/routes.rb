@@ -55,4 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'pages#home'
   get 'about' => 'pages#about'
+  resource :users
+  get 'users/new' => 'users#new'
+  get 'thanks' => 'pages#thanks'
 end

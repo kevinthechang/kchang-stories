@@ -1,0 +1,27 @@
+<div class="header">
+  <div class="container">
+    <img src="http://s3.amazonaws.com/codecademy-content/courses/learn-rails/img/logo-1m.svg">
+    <h1>Sign Up</h1>
+  </div>
+</div>
+
+<div class="create">
+  <div class="container">
+    
+    <!-- Your code here -->
+    <%= form_for(@user) do |f| %>
+    	<div class="field">
+        	<%= f.label :user %><br>
+        	<h2>First Name</h2><br>
+			<%= f.text_area :firstname %><br>
+			<h2>Last Name</h2><br>
+			<%= f.text_area :lastname %><br>
+			<h2>Email Address</h2><br>
+			<%= f.text_area :email %>
+    	</div>
+    	<div class="actions">
+        <%= f.submit "Sign Up" %>
+    	</div>
+    <% end %>
+  </div>
+</div>

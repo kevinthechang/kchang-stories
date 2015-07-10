@@ -11,11 +11,9 @@
     <!-- Your code here -->
     <%= form_for(@user) do |f| %>
     	<div class="field">
-        	<%# <%= f.label :user %>
-        	<h2>First Name</h2><br>
-			<%= f.text_area :firstname %><br>
-			<h2>Last Name</h2><br>
-			<%= f.text_area :lastname %><br>
+        	<%# <%= f.label :user %> 
+        	<h2>Full Name</h2><br>
+			<%= f.text_area :fullname %><br>
 			<h2>Email Address</h2><br>
 			<%= f.text_area :email %>
     	</div>

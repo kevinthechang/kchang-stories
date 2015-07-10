@@ -8,15 +8,30 @@
   <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
 <%# Menu %>
-	<div id="menu">
-	        <ul>
-	            <li><%= link_to "Home", '/' %></li>
-	            <li><%= link_to "About", '/about' %></li>
-	            <li><%= link_to "Sign Up", '/users/new' %></li>
-	        </ul>
-	</div>
+	
 	   
 <body>
+	<div id="menu">
+        <ul>
+            <li><%= link_to "Home", '/' %></li>
+            <li><%= link_to "About", '/about' %></li>
+            <li><%= link_to "Sign Up", '/signup' %></li>
+        </ul>
+	</div>
+	<div class="nav pull-right">
+		<% if current_user %> 
+	  		<ul> 
+	    		<li><%= current_user.email %></li> 
+	    		<li><%= link_to "Log out", logout_path, method: "DELETE" %></li> 
+	  		</ul> 
+		<% else %> 
+	  		<ul> 
+	    		<li><%= link_to "Login", 'login' %></a></li> 
+	    		<li><%= link_to "Signup", 'signup' %></a></li> 
+	  		</ul> 
+		<% end %>
+	  
+	</div>
 
 <%= yield %>
 

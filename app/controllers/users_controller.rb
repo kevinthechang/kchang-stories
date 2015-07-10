@@ -5,13 +5,14 @@ class UsersController < ApplicationController
 	def create
 	    @user = User.new(user_params)
 	    if @user.save
-	      redirect_to '/thanks'
+	    	session[:user_id] = @user.id
+	      	redirect_to '/content'
 	    else
-	      render 'new'
+	      	redirect_to '/signup'
 	    end
 	end
 	private
 	def user_params
-	    params.require(:user).permit(:fullname, :email)
+	    params.require(:user).permit(:fullname, :email, :password)
 	end
 end

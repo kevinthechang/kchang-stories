@@ -56,6 +56,11 @@ Rails.application.routes.draw do
   root 'pages#home'
   get 'about' => 'pages#about'
   resource :users
-  get 'users/new' => 'users#new'
+  get 'signup' => 'users#new'
   get 'thanks' => 'pages#thanks'
+  get 'login' => 'sessions#new'
+  post 'login' => 'sessions#create'
+  delete 'logout' => 'sessions#destroy'
+  get 'content' => 'pages#content'
+  get 'logout' => 'sessions#destroy'
 end

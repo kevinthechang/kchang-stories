@@ -28,6 +28,7 @@ gem 'rails_12factor', group: :production
 
 # Intercom
 gem 'intercom-rails'
+gem 'intercom', "~> 3.0.3"
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'

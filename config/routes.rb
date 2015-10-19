@@ -63,4 +63,6 @@ Rails.application.routes.draw do
   delete 'logout' => 'sessions#destroy'
   get 'content' => 'pages#content'
   get 'logout' => 'sessions#destroy'
+  get 'message' => 'pages#message'
+  post 'message' => 'pages#message'
 end

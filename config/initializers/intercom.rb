@@ -29,12 +29,12 @@ IntercomRails.config do |config|
   # == Include for logged out Users
   # If set to true, include the Intercom messenger on all pages, regardless of whether
   # The user model class (set below) is present. Only available for Apps on the Acquire plan.
-  # config.include_for_logged_out_users = true
+  config.include_for_logged_out_users = true
 
   # == User model class
   # The class which defines your user model
   #
-  # config.user.model = Proc.new { User }
+  config.user.model = Proc.new { User }
 
   # == Exclude users
   # A Proc that given a user returns true if the user should be excluded
@@ -47,24 +47,24 @@ IntercomRails.config do |config|
   # You can provide either a method name which will be sent to the current
   # user object, or a Proc which will be passed the current user.
   #
-  # config.user.custom_data = {
-  #   :plan => Proc.new { |current_user| current_user.plan.name },
-  #   :favorite_color => :favorite_color
-  # }
+  #config.user.custom_data = {
+   #  :plan => Proc.new { |current_user| current_user.plan.name },
+    # :favorite_color => :favorite_color
+   #}
 
   # == User -> Company association
   # A Proc that given a user returns an array of companies
   # that the user belongs to.
   #
-  # config.user.company_association = Proc.new { |user| user.companies.to_a }
-  # config.user.company_association = Proc.new { |user| [user.company] }
+  config.user.company_association = Proc.new { |user| user.companies.to_a }
+  config.user.company_association = Proc.new { |user| [user.company] }
 
   # == Current company method/variable
   # The method/variable that contains the current company for the current user,
   # in your controllers. 'Companies' are generic groupings of users, so this
   # could be a company, app or group.
   #
-  # config.company.current = Proc.new { current_company }
+  config.company.current = Proc.new { current_company }
 
   # == Company Custom Data
   # A hash of additional data you wish to send about a company.

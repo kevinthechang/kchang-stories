@@ -1,0 +1,9 @@
+<%= form_for(@usermessage, :url message_path) do |f| %>
+    	<div class="field">
+			<%= f.text_area :subject, :placeholder => "Message Subject" %>
+			<%= f.text_area :message, :placeholder => "Message" %>
+    	</div>
+    	<div class="actions">
+        <%= f.submit "Sign Up", class: "btn-submit" %>
+    	</div>
+    <% end %>

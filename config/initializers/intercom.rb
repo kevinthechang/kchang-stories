@@ -94,5 +94,5 @@ IntercomRails.config do |config|
   # uncomment this line and clicks on any element with id 'Intercom' will
   # open the messenger.
   #
-  # config.inbox.style = :custom
+  #config.inbox.style = :custom
 end

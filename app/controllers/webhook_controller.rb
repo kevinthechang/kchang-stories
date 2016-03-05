@@ -1,5 +1,5 @@
 class WebhookController < ApplicationController
-  require 'OpenSSL'
+  # require 'OpenSSL'
   # before_filter :init_check_signature
 
   # def check_signature_display

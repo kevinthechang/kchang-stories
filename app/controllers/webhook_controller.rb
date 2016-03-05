@@ -21,7 +21,7 @@ class WebhookController < ApplicationController
         @calculated_signature = "Nothing"
         @intercom_signature = "Received"
     end
-    binding.pry
+    # binding.pry
   end
 
   # def init_check_signature

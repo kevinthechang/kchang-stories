@@ -20,6 +20,7 @@ class WebhookController < ApplicationController
       else
         @calculated_signature = "Nothing"
         @intercom_signature = "Received"
+      end
     end
     # binding.pry
   end

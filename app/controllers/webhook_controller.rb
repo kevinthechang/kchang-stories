@@ -14,7 +14,7 @@ class WebhookController < ApplicationController
       calculated_signature = OpenSSL::HMAC.hexdigest(digest, secret, json_data).prepend('sha1=')
       intercom_signature = request.env["HTTP_X_HUB_SIGNATURE"]
     else
-      if calculated_signature != ""
+      if calculated_signature != nil
         @calculated_signature = calculated_signature
         @intercom_signature = intercom_signature
       else
@@ -23,6 +23,11 @@ class WebhookController < ApplicationController
       end
     end
     # binding.pry
+    if @calculated_signature == @intercom_signature
+      @success = "Woohoo!"
+    else
+      @success = "Not the same!"
+    end
   end
 
   # def init_check_signature

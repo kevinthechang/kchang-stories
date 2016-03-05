@@ -1,0 +1,12 @@
+<p><%= @calculated_signature %></p>
+<p><%= @intercom_signature %></p>
+<script type="text/javascript">
+<%= binding.pry %>
+var success = "Default"
+  if (<%= @calculated_signature %> == <%= @intercom_signature %>){
+    success = "We are same same!";
+  } else {
+    success = "Not the same!";
+  }
+</script>
+<p>document.write(success)</p>

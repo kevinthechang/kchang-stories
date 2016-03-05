@@ -65,4 +65,8 @@ Rails.application.routes.draw do
   get 'logout' => 'sessions#destroy'
   get 'message' => 'pages#message'
   post 'message' => 'pages#message'
+
+  # webhook secret
+  get '/webhook/check_signature' => 'webhook#check_signature'
+  post '/webhook/check_signature' => 'webhook#check_signature'
 end

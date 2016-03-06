@@ -7,8 +7,8 @@ class WebhookController < ApplicationController
   # end
 
   def check_signature
-    if request.body.read != ""
-      json_data = request.body.read
+    json_data = request.body.read
+    if json_data != nil
       secret = "kevinsecretshhhhh"
       digest = OpenSSL::Digest.new('sha1')
       calculated_signature = OpenSSL::HMAC.hexdigest(digest, secret, json_data).prepend('sha1=')

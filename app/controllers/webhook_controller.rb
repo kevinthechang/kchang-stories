@@ -1,11 +1,13 @@
 class WebhookController < ApplicationController
   # before_filter :init_check_signature
-
+  skip_before_filter  :verify_authenticity_token
+  # respond_to :json
 
   def check_signature
     # cache_signatures = ActiveSupport::Cache::MemoryStore.new
     # cache_signatures.write('test','success')
     json_data = request.body.read
+    # binding.pry
     @request = json_data
     if json_data != ""
       secret = "kevinsecretshhhhh"

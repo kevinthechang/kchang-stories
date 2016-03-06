@@ -40,7 +40,8 @@ gem 'httparty'
 gem 'pry'
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+# responders to set respond_to :json
+gem 'responders', '~> 2.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

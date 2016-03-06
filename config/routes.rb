@@ -68,5 +68,5 @@ Rails.application.routes.draw do
 
   # webhook secret
   get '/webhook/check_signature' => 'webhook#check_signature'
-  post '/webhook/check_signature' => 'webhook#check_signature'
+  post '/webhook/check_signature' => 'webhook#check_signature', :defaults => {:format => 'json'}
 end

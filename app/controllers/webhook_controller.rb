@@ -8,8 +8,9 @@ class WebhookController < ApplicationController
     # cache_signatures.write('test','success')
     json_data = request.body.read
     # binding.pry
-    @request = json_data
+    @request = Rails.cache.read('post_request')
     if json_data != ""
+      Rails.cache.write('post_request',json_data)
       secret = "kevinsecretshhhhh"
       digest = OpenSSL::Digest.new('sha1')
       calculated_signature = OpenSSL::HMAC.hexdigest(digest, secret, json_data).prepend('sha1=')

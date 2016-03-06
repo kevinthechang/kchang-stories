@@ -1,14 +1,5 @@
-<p><%= @calculated_signature %></p>
-<p><%= @intercom_signature %></p>
-<!-- <script>
-var success = "Default"
-  if (<%= @calculated_signature %> == <%= @intercom_signature %>){
-    success = "We are same same!";
-  } else {
-    success = "Not the same!";
-  }
-  <%= binding.pry %>
-  document.getElementById('result').innerHTML = success;
-</script> -->
+<p>Calculated Signature: <%= @calculated_signature %></p>
+<p>Intercom's Signature: <%= @intercom_signature %></p>
+
 <p id="result"><%= @success %></p>
 <p><%= @result %></p>

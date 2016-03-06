@@ -67,6 +67,6 @@ Rails.application.routes.draw do
   post 'message' => 'pages#message'
 
   # webhook secret
-  get '/webhook/check_signature' => 'webhook#check_signature'
-  post '/webhook/check_signature' => 'webhook#check_signature'
+  # get '/webhook/check_signature' => 'webhook#check_signature'
+  # post '/webhook/check_signature' => 'webhook#check_signature'
 end

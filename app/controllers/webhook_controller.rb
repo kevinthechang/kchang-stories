@@ -21,6 +21,7 @@ class WebhookController < ApplicationController
       Rails.cache.write('intercom_signature',intercom_signature)
       @calculated_signature = calculated_signature
       @intercom_signature = intercom_signature
+    end
     # else
     #   # binding.pry
     #   if Rails.cache.read('calculated_signature') != nil

@@ -9,8 +9,8 @@
 </head>
 
 <%# Menu %>
-	
-	   
+
+
 <body>
 	<div id="menu">
         <ul>
@@ -20,31 +20,32 @@
         </ul>
 	</div>
 	<div class="nav pull-right">
-		<% if current_user %> 
-	  		<ul> 
-	    		<li><%= current_user.email %></li> 
-	    		<li><%= link_to "Log out", logout_path, method: "DELETE" %></li> 
-	  		</ul> 
-		<% else %> 
-	  		<ul> 
-	    		<li><%= link_to "Login", 'login' %></a></li> 
-	    		<li><%= link_to "Signup", 'signup' %></a></li> 
-	  		</ul> 
+		<% if current_user %>
+	  		<ul>
+	    		<li><%= current_user.email %></li>
+	    		<li><%= link_to "Log out", logout_path, method: "DELETE" %></li>
+	  		</ul>
+		<% else %>
+	  		<ul>
+	    		<li><%= link_to "Login", 'login' %></a></li>
+	    		<li><%= link_to "Signup", 'signup' %></a></li>
+          <li><%= link_to "Webhook Checker", 'check_signature_display' %></a></li>
+	  		</ul>
 		<% end %>
-	  
+
 	</div>
 
 <%= yield %>
 
 <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 
-	
+
 
 	<%# Footer %>
 	<div class="footer">
 		<p>A KevintheChang Project</p>
-	</div>    
-	
+	</div>
+
 </body>
 
 </html>

@@ -24,6 +24,7 @@
 	  		<ul>
 	    		<li><%= current_user.email %></li>
 	    		<li><%= link_to "Log out", logout_path, method: "DELETE" %></li>
+          <li><%= link_to "Webhook Checker", 'check_signature_display' %></a></li>
 	  		</ul>
 		<% else %>
 	  		<ul>

@@ -61,7 +61,7 @@ GEM
       json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
-    intercom (3.0.3)
+    intercom (3.5.4)
       json (~> 1.8)
     intercom-rails (0.2.28)
       activesupport (> 3.0)
@@ -167,7 +167,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.1.0)
   httparty
-  intercom (~> 3.0.3)
+  intercom (~> 3.5.4)
   intercom-rails
   jbuilder (~> 2.0)
   jquery-rails

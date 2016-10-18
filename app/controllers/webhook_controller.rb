@@ -21,6 +21,11 @@ class WebhookController < ApplicationController
       Rails.cache.write('intercom_signature',intercom_signature)
       @calculated_signature = calculated_signature
       @intercom_signature = intercom_signature
+
+      # send response back to Intercom
+      respond_to do |format|
+        format.json { render nothing: true, status: :200}
+      end
     end
     # else
     #   # binding.pry

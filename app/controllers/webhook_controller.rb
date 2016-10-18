@@ -23,9 +23,7 @@ class WebhookController < ApplicationController
       @intercom_signature = intercom_signature
 
       # send response back to Intercom
-      respond_to do |format|
-        format.json { render nothing: true, status: :200}
-      end
+      render json: { text: "Got it!", status: 200}
     end
     # else
     #   # binding.pry

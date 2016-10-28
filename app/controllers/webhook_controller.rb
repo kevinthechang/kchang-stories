@@ -27,7 +27,7 @@ class WebhookController < ApplicationController
 
       # process conversation note and create user note
       if json_data["data"]["topic"] == "conversation.admin.noted"
-        if json_data["data"]["item"]["conversation_parts"]["conversation_parts"][0]["body"] == "<p>Webhook Note</p>"
+        if json_data["data"]["item"]["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"
           userId = json_data["data"]["item"]["user"]["id"]
           intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
           note = intercom.notes.create(:body => "Note from Webhook", :id => userId)

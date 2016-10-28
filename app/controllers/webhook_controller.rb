@@ -40,13 +40,13 @@ class WebhookController < ApplicationController
           intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
           note = intercom.notes.create(:body => "Note from Webhook, current timestamp: #{time}", :user_id => userId)
         end
-      elsif webhook_topic == "conversation.user.created"
-        convo_id = item["id"]
-        if item["conversation_message"]["body"] == "<p>show bot</p>"
-          userId = item["user"]["user_id"]
-          intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-          reply = intercom.conversations.reply(:id => convo_id, :type => "admin", :admin_id => "125999", :message_type => "comment", :body => "This isn't Kevin. It's a bot!")
-        end
+      # elsif webhook_topic == "conversation.user.created"
+      #   convo_id = item["id"]
+      #   if item["conversation_message"]["body"] == "<p>show bot</p>"
+      #     userId = item["user"]["user_id"]
+      #     intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
+      #     reply = intercom.conversations.reply(:id => convo_id, :type => "admin", :admin_id => "125999", :message_type => "comment", :body => "This isn't Kevin. It's a bot!")
+      #   end
       end
 
     end

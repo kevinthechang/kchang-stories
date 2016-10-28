@@ -26,8 +26,8 @@ class WebhookController < ApplicationController
       render json: { text: "Got it!", status: 200}
 
       # process conversation note and create user note
-      webhook_topic = json_data
-      Rails.cache.write('webhook_topic', webhook_topic)
+      # webhook_topic = json_data
+      # Rails.cache.write('webhook_topic', webhook_topic)
       # item = json_data["data"]["item"]
       # # check if topic is conversation.admin.noted
       # if topic == "conversation.admin.noted"
@@ -66,7 +66,7 @@ class WebhookController < ApplicationController
     if Rails.cache.read('calculated_signature') != nil
       @calculated_signature = Rails.cache.read('calculated_signature')
       @intercom_signature = Rails.cache.read('intercom_signature')
-      @topic = Rails.cache.read('webhook_topic')
+      # @topic = Rails.cache.read('webhook_topic')
     else
       @calculated_signature = "Nothing"
       @intercom_signature = "Received"

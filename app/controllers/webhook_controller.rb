@@ -30,7 +30,7 @@ class WebhookController < ApplicationController
       parsed_json = JSON.parse(json_data)
       webhook_topic = parsed_json["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
-      item = json_data["data"]["item"]
+      item = parsed_json["data"]["item"]
       # # check if topic is conversation.admin.noted
       if webhook_topic == "conversation.admin.noted"
         if item["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"

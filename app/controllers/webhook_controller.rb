@@ -66,6 +66,7 @@ class WebhookController < ApplicationController
     if Rails.cache.read('calculated_signature') != nil
       @calculated_signature = Rails.cache.read('calculated_signature')
       @intercom_signature = Rails.cache.read('intercom_signature')
+      @topic = Rails.cache.read('webhook_topic')
     else
       @calculated_signature = "Nothing"
       @intercom_signature = "Received"

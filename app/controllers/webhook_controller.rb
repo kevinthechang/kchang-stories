@@ -28,7 +28,7 @@ class WebhookController < ApplicationController
 
       # process conversation note and create user note
       parsed_json = JSON.parse(json_data)
-      webhook_topic = parsed_json["data"]["topic"]
+      webhook_topic = parsed_json["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
       # item = json_data["data"]["item"]
       # # check if topic is conversation.admin.noted

@@ -30,15 +30,15 @@ class WebhookController < ApplicationController
       parsed_json = JSON.parse(json_data)
       webhook_topic = parsed_json["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
-      # item = json_data["data"]["item"]
+      item = json_data["data"]["item"]
       # # check if topic is conversation.admin.noted
-      # if topic == "conversation.admin.noted"
-      #   if item["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"
-      #     userId = item["user"]["id"]
-      #     intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-      #     note = intercom.notes.create(:body => "Note from Webhook", :id => userId)
-      #   end
-      # end
+      if topic == "conversation.admin.noted"
+        if item["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"
+          userId = item["user"]["id"]
+          intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
+          note = intercom.notes.create(:body => "Note from Webhook", :id => userId)
+        end
+      end
 
     end
     # else

@@ -37,7 +37,7 @@ class WebhookController < ApplicationController
           userId = item["user"]["id"]
           time = Time.now
           intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-          note = intercom.notes.create(:body => "Note from Webhook, random number: #{time}", :id => userId)
+          note = intercom.notes.create(:body => "Note from Webhook, current timestamp: #{time}", :id => userId)
         end
       end
 

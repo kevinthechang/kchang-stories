@@ -27,7 +27,8 @@ class WebhookController < ApplicationController
       render json: { text: "Got it!", status: 200}
 
       # process conversation note and create user note
-      parsed_json = JSON.parse(json_data)
+      request.body.rewind
+      parsed_json = JSON.parse(request.body.read)
       webhook_topic = parsed_json["data"]["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
       # item = json_data["data"]["item"]

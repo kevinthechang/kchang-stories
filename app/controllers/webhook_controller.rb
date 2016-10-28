@@ -34,10 +34,10 @@ class WebhookController < ApplicationController
       # # check if topic is conversation.admin.noted
       if webhook_topic == "conversation.admin.noted"
         if item["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"
-          userId = item["user"]["id"]
+          userId = item["user"]["user_id"]
           random_number = rand(100)
           intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-          note = intercom.notes.create(:body => "Note from Webhook, random number: #{random_number}", :id => userId)
+          note = intercom.notes.create(:body => "Note from Webhook, random number: #{random_number}", :user_id => userId)
         end
       end
 

@@ -2,6 +2,7 @@ class WebhookController < ApplicationController
   # before_filter :init_check_signature
   skip_before_filter  :verify_authenticity_token
   # respond_to :json
+  require 'json'
 
   def check_signature
     # cache_signatures = ActiveSupport::Cache::MemoryStore.new
@@ -26,7 +27,8 @@ class WebhookController < ApplicationController
       render json: { text: "Got it!", status: 200}
 
       # process conversation note and create user note
-      webhook_topic = json_data.data.topic
+      parsed_json = JSON.parse(json_data)
+      webhook_topic = parsed_json["data"]["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
       # item = json_data["data"]["item"]
       # # check if topic is conversation.admin.noted

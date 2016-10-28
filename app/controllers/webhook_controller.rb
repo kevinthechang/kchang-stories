@@ -35,9 +35,9 @@ class WebhookController < ApplicationController
       if webhook_topic == "conversation.admin.noted"
         if item["conversation_parts"]["conversation_parts"][0]["body"] == "<p>webhook note</p>"
           userId = item["user"]["user_id"]
-          time = Time.now
+          # time = Time.now
           intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-          note = intercom.notes.create(:body => "Note from Webhook, current timestamp: #{time}", :user_id => userId)
+          note = intercom.notes.create(:body => "Note from Webhook, current timestamp: #{Time.now}", :user_id => userId)
         end
       end
 

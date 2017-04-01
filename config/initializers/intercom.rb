@@ -13,7 +13,8 @@ IntercomRails.config do |config|
   # This is required for some Intercom rake tasks like importing your users;
   # you can generate one at https://app.intercom.io/apps/api_keys.
   #
-  config.api_key = "1da89d0c08354cc43301eca6bec0b25188903c41"
+  # config.api_key = "1da89d0c08354cc43301eca6bec0b25188903c41"
+  # config.token = "dG9rOjY5NzZkNDJkXzdhNzZfNDdmNl85OWQ5X2IzZTk1ZjJiNmM0MjoxOjA="
 
   # == Enabled Environments
   # Which environments is auto inclusion of the Javascript enabled for

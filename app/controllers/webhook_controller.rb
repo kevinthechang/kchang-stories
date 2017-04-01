@@ -31,7 +31,8 @@ class WebhookController < ApplicationController
       webhook_topic = parsed_json["topic"]
       Rails.cache.write('webhook_topic', webhook_topic)
       item = parsed_json["data"]["item"]
-      intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
+      intercom = Intercom::Client.new(token:
+      "dG9rOjY5NzZkNDJkXzdhNzZfNDdmNl85OWQ5X2IzZTk1ZjJiNmM0MjoxOjA=")
 
       # # check if topic is conversation.admin.noted
       if webhook_topic == "conversation.admin.noted"

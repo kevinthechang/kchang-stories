@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   		@user = User.find_by_email(params[:session][:email])
   		if @user && @user.authenticate(params[:session][:password])
     		session[:user_id] = @user.id
-    		intercom = Intercom::Client.new(app_id: 'umxbi8zj', api_key: '1da89d0c08354cc43301eca6bec0b25188903c41')
-  			intercom.events.create(event_name: "Logged In", created_at: Time.now.to_i, email: @user.email)
+    		intercom = Intercom::Client.new(token: "dG9rOjY5NzZkNDJkXzdhNzZfNDdmNl85OWQ5X2IzZTk1ZjJiNmM0MjoxOjA=")
+  			intercom.events.create(event_name: "Logged In", created_at: Time.now.to_i, user_id: @user.id)
     		redirect_to '/content'
         # intercomuser = intercom.users.find(:email => @user.email)
         # intercom.messages.create({
